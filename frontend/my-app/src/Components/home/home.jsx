@@ -56,7 +56,7 @@ export default function Home() {
     <td>{stu.name}</td>
     <td>{stu.marks}</td>
     <td>
-      <button className="view-btn" onClick={() => viewStudent(stu.slno)}>
+      <button className="view-btn" onClick={() => viewStudent(stu.id)}>
         View
       </button>
     </td>

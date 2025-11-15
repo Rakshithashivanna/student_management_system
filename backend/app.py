@@ -62,7 +62,7 @@ def get_students():
     students = cur.fetchall()
     cur.close()
 
-    student_list = [{"slno": i + 1,  "name": s[1], "marks": s[2]} for i, s in enumerate(students)]
+    student_list = [{"id": s[0],"slno": i + 1,  "name": s[1], "marks": s[2]} for i, s in enumerate(students)]
     return jsonify(student_list)
 
 @app.route('/student/<int:id>', methods=['GET'])
