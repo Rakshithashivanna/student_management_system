@@ -30,16 +30,12 @@ export default function Home() {
     <div className="home-container">
       <div className="header">
         <h2>Student List</h2>
-        <button 
-        className="add-student-btn"
-        onClick={() => handleAddStudent()}
-        style={{ position: "absolute", top: "20px", right: "20px" }}
-      >
-        Add Student
-      </button>
-      
+        <div style={{ display: "flex", justifyContent: "flex-end",marginTop: "10px", marginRight: "200px",marginBottom:"5px" }}>
+          <button className="add-student-btn" onClick={handleAddStudent}style={{backgroundColor:"#007bff",color:"white"}}>
+            Create Student
+          </button>
+        </div>
       </div>
-
       <table className="student-table">
         <thead>
           <tr>
@@ -51,21 +47,19 @@ export default function Home() {
         </thead>
         <tbody>
           {students.map((stu, index) => (
-  <tr key={index}>
-    <td>{stu.slno}</td>
-    <td>{stu.name}</td>
-    <td>{stu.marks}</td>
-    <td>
-      <button className="view-btn" onClick={() => viewStudent(stu.id)}>
-        View
-      </button>
+          <tr key={index}>
+          <td>{stu.slno}</td>
+          <td>{stu.name}</td>
+          <td>{stu.marks}</td>
+          <td>
+          <button className="view-btn" onClick={() => viewStudent(stu.id)}>
+            View
+          </button>
     </td>
   </tr>
-))}
-
+  ))}
         </tbody>
       </table>
-
       <div className="sort-buttons">
         <button onClick={() => fetchStudents("name")}>Order by Name</button>
         <button onClick={() => fetchStudents("marks")}>Order by Marks</button>

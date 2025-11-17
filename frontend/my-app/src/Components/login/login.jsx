@@ -9,7 +9,8 @@ const [username,setUsername]=useState("");
 const [password,setPassword]=useState("");
 const [message, setMessage] = useState("");
 const navigate=useNavigate();
-const handleLogin=async(e)=>{e.preventDefault();
+const handleLogin=async(e)=>{
+  e.preventDefault();
   try{
     const res =await axios.post("http://127.0.0.1:5000/login",{username,password});
     if (res.data.message === "Login success") {
